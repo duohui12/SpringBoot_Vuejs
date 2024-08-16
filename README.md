@@ -60,15 +60,9 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 
 이제 서버구성을 했으니 사용자가 http로 요청을 보낼때 어떻게 프론트엔드/백엔드에서 응답을 해주는지 살펴보자. 
 
-<div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_process2.png?raw=true">
-  </div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true"> 
-  </div>
-</div>
-<div style="clear:both">  
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_process2.png?raw=true" style="width: 45%;"/>
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true" style="width: 45%;"/>
 </div>
 
 
@@ -98,15 +92,9 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 
 <br>
 
-<div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/blue.png?raw=true">
-  </div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/green.png?raw=true"> 
-  </div>
-</div>
-<div style="clear:both">  
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/blue.png?raw=true" style="width: 45%;"/>
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/green.png?raw=true" style="width: 45%;"/>
 </div>
 
 
@@ -116,17 +104,10 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 
 <br>
 
-<div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_blue.png?raw=true">
-  </div>
-  <div style="float:left; width:40%;">
-    <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true"> 
-  </div>
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_blue.png?raw=true" style="width: 45%;"/>
+  <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true" style="width: 45%;"/>
 </div>
-<div style="clear:both">  
-</div>
-
 
 
 위 이미지는 nginx의 설정 파일이다. 왼쪽 이미지는 블루환경 운영중일때, 오른쪽 이미지는 그린환경을 운영중일때의 설정이다.
