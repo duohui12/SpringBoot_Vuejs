@@ -42,7 +42,7 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 
 이번 버전에서는 간단하게 한대의 EC2 우분투 서버 안에서 젠킨스, tomcat (jar 파일 실행시 내장톰캣 동작하는 방식), nginx를 도커 컨테이너로 구성했다. 격리된 각각의 서비스끼리 통신하고 파이프라인 작업을 수행하기 위해 SSH 프로토콜을 사용했다. 추후에 각각의 서비스를 서로 다른 서버로 분리 하더라도 SSH 통신할 때 사용한 IP 주소만 변경하면 쉽게 구성을 확장할 수 있을 것 같다. 
 
-<img src="https://github.com/duohui12/blog/blob/main/images/cicd/ec2_setting.png?raw=true" alt="ec2_setting.png" style="zoom:35%;" />
+<img src="https://github.com/duohui12/blog/blob/main/images/cicd/ec2_setting.png?raw=true" alt="ec2_setting.png" style="width:60%;" />
 
 젠킨스와 톰캣을 기본적으로 8080 포트를 사용한다. 각각의 컨테이너 내부는 격리된 환경이기 때문에 컨테이너 내부에서 젠킨스와 톰캣 모두 8080 포트를 사용해도 문제가 없다. 하지만 한대의 EC2 서버에서는 중복된 포트를 사용하지 않기 위해 젠킨스 서비스는 18080:8080으로, 톰캣은 8080:8080으로 포트포워딩 시켰다.  
 
@@ -61,15 +61,16 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 이제 서버구성을 했으니 사용자가 http로 요청을 보낼때 어떻게 프론트엔드/백엔드에서 응답을 해주는지 살펴보자. 
 
 <div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_process2.png?raw=true">
   </div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true"> 
   </div>
 </div>
 <div style="clear:both">  
 </div>
+
 
 
 
@@ -98,10 +99,10 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 <br>
 
 <div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/blue.png?raw=true">
   </div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/green.png?raw=true"> 
   </div>
 </div>
@@ -110,15 +111,16 @@ Vue.js와 Spring Boot를 각각 독립된 애플리케이션으로 설정하고,
 
 
 
+
 왼쪽 이미지는 현재 블루환경이 운영중이고, 모든 트래픽은 블루환경으로 향하고 있음을 보여준다. 이 상태에서 최신 버전의 애플리케이션을 그린환경에 구성한다. 그린환경을 테스트한 후에, 오른쪽 이미지처럼 모든 트래픽이 그린환경으로 향하도록 nginx 설정을 변경한다. 
 
 <br>
 
 <div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_blue.png?raw=true">
   </div>
-  <div style="float:left; width:50%;">
+  <div style="float:left; width:40%;">
     <img src="https://github.com/duohui12/blog/blob/main/images/cicd/nginx_conf_green.png?raw=true"> 
   </div>
 </div>
